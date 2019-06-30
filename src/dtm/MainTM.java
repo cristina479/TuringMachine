@@ -14,12 +14,12 @@ import java.util.Scanner;
  */
 public class MainTM {
 	
-	final static int MAX_LENGTH_ARRAY = 30;
+	final static int MAX_LENGTH_BINARIES = 30;
 	final static int DEFAULT_MODE = 0;
 	final static int ADDITION_MODE = 1;
 	final static int SUBTRACTION_MODE = 2;
 	final static int MULTIPLICATION_MODE = 3;
-	final static String FILEPATH = "src/dtm/";
+	final static String FILEPATH = "./dtm/";
 	final static String FILENAME_MODULE3 = "default.txt";
 	final static String FILENAME_ADDITION = "addition.txt";
 	final static String FILENAME_SUBTRACTION = "subtraction.txt";
@@ -45,6 +45,7 @@ public class MainTM {
 			}
 			
 			if(modeInt >= 0 && modeInt <= 3) {
+				System.out.println("\nFor mode 1, 2, and 3 enter binary numbers separated by ONE space character (i.e. 1100101 101).");
 				System.out.println("Enter input: ");
 				String input = in.nextLine();               //10101 - mode 0	//110110 101011 - mode 1   //100 1110 or 110000 111010100 - mode 2
 				selectMachine(input, modeInt);
@@ -62,7 +63,7 @@ public class MainTM {
 	
 	private static void selectMachine(String input, int mode) {
 		TuringMachine tm = null;
-		boolean trace_run_console = input.length() <= MAX_LENGTH_ARRAY ? true : false;
+		boolean trace_run_console = input.length() <= MAX_LENGTH_BINARIES ? true : false;
 		
 		switch(mode) {
 		case 0:

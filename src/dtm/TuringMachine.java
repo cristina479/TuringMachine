@@ -15,7 +15,7 @@ import java.util.Set;
 public class TuringMachine {
 
 	private static final boolean DEBUG = false;
-	private static final boolean PRINT_TRACE = true;
+	private static final boolean PRINT_TRACE = false;
 	private static final int INCREASE_TAPE = 1;
 	private static final char BLANK = ' ';
 	private Set<String> stateSet;
@@ -98,7 +98,7 @@ public class TuringMachine {
 		
 		if(PRINT_TRACE) {
 			if (pw == null) {
-				System.out.println("Initial values in tape: [" + String.valueOf(this.tape) + "]\n");		
+				System.out.println("Initial value in tape: [" + String.valueOf(this.tape) + "]\n");		
 				System.out.println("Outputs after the current transition is executed:\n");
 			} else {
 				pw.println("Initial values in tape: [" + String.valueOf(this.tape) + "]");	
