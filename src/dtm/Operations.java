@@ -5,10 +5,16 @@ public final class Operations {
 
 	public Operations() {}
 	
+	/**
+	 * This method creates the states and the transition table from the DTM in Module 3
+	 * 
+	 * @return the Turing Machine with the states and transitions of the DTM in Module 3
+	 */
 	public static TuringMachine addDefaultCollection() {	
+		// create an instance of a Turing Machine
 		TuringMachine tm = new TuringMachine();
 		
-		//adding the states
+		// add the states
 		tm.addState("q0");
 		tm.addState("q1");
 		tm.addState("q2");
@@ -17,11 +23,12 @@ public final class Operations {
 		tm.setAcceptState("qY");
 		tm.setRejectState("qN");
 		
+		// for debugging purposes
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Default state collection: " + tm.getStateSet() + "\n");
 		}
 		
-		//adding the transitions  (q, x, q', x', s)
+		// add the transitions  (q, x, q', x', s) where q is the readState, x is the readSymbol, q' is the writeState, x' is the writeSymbol, and {-1, 0, 1} is the moveDirection
 		tm.addTransition("q0", '0', "q0", '0', 1);
 		tm.addTransition("q0", '1', "q0", '1', 1);
 		tm.addTransition("q0", ' ', "q1", ' ', -1);
@@ -38,6 +45,7 @@ public final class Operations {
 		tm.addTransition("q3", '1', "qN", ' ', -1);
 		tm.addTransition("q3", ' ', "qN", ' ', -1);
 		
+		// for debugging purposes
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Deafult transition collection:\n" + tm.transitionsToString() + "\n");	
 		}
@@ -45,10 +53,16 @@ public final class Operations {
 		return tm;
 	}
 	
+	/**
+	 * This method creates the states and the transition table to perform a binary addition operation
+	 * 
+	 * @return the Turing Machine with the states and transitions needed to perform a binary addition operation
+	 */
 	public static TuringMachine addAdditionCollection() {
+		// create a Turing Machine
 		TuringMachine tm = new TuringMachine();
 
-		//adding the states
+		// add the states
 		tm.addState("q0");
 		tm.addState("q1");
 		tm.addState("q2");
@@ -63,11 +77,12 @@ public final class Operations {
 		tm.setAcceptState("qY");
 		tm.setRejectState("qN");
 
+		// for debugging purposes 
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Adittion state collection: " + tm.getStateSet() + "\n");
 		}
 
-		//adding the transitions (q, x, q', x', s)
+		// add the transitions  (q, x, q', x', s) where q is the readState, x is the readSymbol, q' is the writeState, x' is the writeSymbol, and {-1, 0, 1} is the moveDirection
 		tm.addTransition("q0", '0', "q0", '0', 1);
 		tm.addTransition("q0", '1', "q0", '1', 1);
 		tm.addTransition("q0", ' ', "q1", ' ', 1);
@@ -128,6 +143,7 @@ public final class Operations {
 		tm.addTransition("q9", 'i', "q9", '0', -1);
 		tm.addTransition("q9", 'j', "q9", '1', -1);
 
+		// for debugging purposes
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Addition transition collection:\n" + tm.transitionsToString() + "\n");
 		}
@@ -135,10 +151,16 @@ public final class Operations {
 		return tm;
 	}
 	
+	/**
+	 * This method creates the states and the transition table to perform a binary subtraction operation
+	 * 
+	 * @return the Turing Machine with the states and transitions needed to perform a binary subtraction operation
+	 */
 	public static TuringMachine addSubtractionCollection() {
+		// create an instance of a Turing Machine
 		TuringMachine tm = new TuringMachine();
 
-		//adding the states
+		// add the states
 		tm.addState("q0");
 		tm.addState("q1");
 		tm.addState("q2");
@@ -156,11 +178,12 @@ public final class Operations {
 		tm.setAcceptState("qY");
 		tm.setRejectState("qN");
 		
+		// for debugging purposes
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Subtraction state collection: " + tm.getStateSet() + "\n");
 		}
 			
-		//adding the transitions  (q, x, q', x', s)
+		// add the transitions  (q, x, q', x', s) where q is the readState, x is the readSymbol, q' is the writeState, x' is the writeSymbol, and {-1, 0, 1} is the moveDirection
 		tm.addTransition("q0", '0', "q0", '0', 1);
 		tm.addTransition("q0", '1', "q0", '1', 1);
 		tm.addTransition("q0", ' ', "q1", ' ', 1);
@@ -239,6 +262,7 @@ public final class Operations {
 		tm.addTransition("q12", 'i', "qN", 'i', 0);
 		tm.addTransition("q12", 'j', "qN", 'j', 0);
 				
+		// for debugging purposes
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Subtraction transition collection:\n" + tm.transitionsToString() + "\n");
 		}
@@ -246,10 +270,16 @@ public final class Operations {
 		return tm;
 	}
 	
+	/**
+	 * This method creates the states and the transition table to perform a binary multiplication operation
+	 * 
+	 * @return the Turing Machine with the states and transitions needed to perform a binary subtraction operation
+	 */
 	public static TuringMachine addMultiplicationCollection() {
+		// create an instance of a Turing Machine
 		TuringMachine tm = new TuringMachine();		
 
-		//adding the states
+		// add the states
 		tm.addState("q0");
 		tm.addState("q1");
 		tm.addState("q2");
@@ -296,11 +326,12 @@ public final class Operations {
 		tm.setAcceptState("qY");
 		tm.setRejectState("qN");
 
+		// for debugging purposes
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Multiplication state collection: " + tm.getStateSet() + "\n");
 		}
 
-		//adding the transitions  (q, x, q', 'x', s)
+		// add the transitions  (q, x, q', x', s) where q is the readState, x is the readSymbol, q' is the writeState, x' is the writeSymbol, and {-1, 0, 1} is the moveDirection
 		tm.addTransition("q0", '0', "q1", '0', -1);
 		tm.addTransition("q0", '1', "q1", '1', -1);
 		tm.addTransition("q0", ' ', "q1", ' ', -1);
@@ -595,6 +626,7 @@ public final class Operations {
 		tm.addTransition("q41", 'i', "qN", 'i', 0);
 		tm.addTransition("q41", 'j', "qN", 'j', 0);
 
+		// for debugging purposes
 		if(PRINT_INITIALIZATION) {
 			System.out.println("Multiplication transition collection:\n" + tm.transitionsToString() + "\n");
 		}
