@@ -9,6 +9,8 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
+ * To stop printing trace runs to a file (input >= 30) or to the terminal (input < 30), change PRINT_TRACE to false.
+ * 
  * Class for constructing a Turing Machine
  * @author Cristina Padro-Juarbe
  *
@@ -16,7 +18,7 @@ import java.util.Set;
 public class TuringMachine {
 
 	private static final boolean DEBUG = false;
-	private static final boolean PRINT_TRACE = false;
+	private static final boolean PRINT_TRACE = true;
 	private static final int INCREASE_TAPE = 1;
 	private static final char BLANK = ' ';
 	private Set<String> stateSet;
